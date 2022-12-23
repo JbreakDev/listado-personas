@@ -1,7 +1,8 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
-import { LoggingService } from '../LoggingService.service';
-import { Persona } from '../persona.model';
-import { PersonasService } from '../personas.service';
+import { Router } from '@angular/router';
+import { LoggingService } from '../../LoggingService.service';
+import { Persona } from '../../persona.model';
+import { PersonasService } from '../../personas.service';
 
 @Component({
   selector: 'app-formulario',
@@ -19,7 +20,7 @@ export class FormularioComponent {
   apellido: string; 
 
   constructor(private loggingService: LoggingService,
-    private personaService: PersonasService){
+    private personaService: PersonasService, private router: Router){
       this.personaService.saludar.subscribe(
         (indice: number) => {
           indice++;
@@ -28,7 +29,7 @@ export class FormularioComponent {
       );
     }
 
-  agregarPersona() {
+  onGuardarPersona() {
     let persona = new Persona(
       this.nombre, 
       this.apellido);
@@ -38,8 +39,7 @@ export class FormularioComponent {
      */
     //this.personaCreada.emit(persona);
     this.personaService.agregarPersona(persona);
-    this.nombre = '';
-    this.apellido = '';
+    this.router.navigate(['personas']);
   }
 
 }
