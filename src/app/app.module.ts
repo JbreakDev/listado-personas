@@ -9,6 +9,7 @@ import { LoggingService } from './LoggingService.service';
 import { PersonasService } from './personas.service';
 import { AppRoutingModule } from './app-routing.module';
 import { PersonasComponent } from './personas/personas.component';
+import { DataServices } from './data.services';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { PersonasComponent } from './personas/personas.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [LoggingService, PersonasService],
+  providers: [LoggingService, PersonasService, DataServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
