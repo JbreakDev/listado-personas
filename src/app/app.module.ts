@@ -9,14 +9,19 @@ import { LoggingService } from './LoggingService.service';
 import { PersonasService } from './personas.service';
 import { AppRoutingModule } from './app-routing.module';
 import { PersonasComponent } from './personas/personas.component';
+<<<<<<< HEAD
 import { DataServices } from './data.services';
+=======
+import { ErrorComponent } from './error/error.component';
+>>>>>>> e18fdabfddd0bc3882ed9c7644eabe1a41b950d0
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonaComponent,
     FormularioComponent,
-    PersonasComponent
+    PersonasComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
