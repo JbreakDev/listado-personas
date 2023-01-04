@@ -44,6 +44,7 @@ export class PersonasService{
         let persona1 = this.personas[indice];
         persona1.apellido = persona.apellido;
         persona1.nombre = persona.nombre;
+        this.dataService.modificarPersona(indice, persona1);
       }
 
       eliminarPersona(indice: number) {
