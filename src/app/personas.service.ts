@@ -19,6 +19,7 @@ export class PersonasService{
       agregarPersona(persona: Persona) {
         this.loggin.enviaMensajeaConsola(`Se añadio ${persona.nombre}`);
         this.personas.push(persona);
+        this.dataService.guardarPersonas(this.personas);
       }
 
       encontrarPersona(indice: number) {
